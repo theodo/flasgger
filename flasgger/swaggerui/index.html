@@ -42,7 +42,8 @@
 
     <script type="text/javascript">
         $(function () {
-            var url = window.location.toString().replace(/\/*#?.*/, '/spec');
+          var apiPrefix = window.location.pathname.match(/\/([^\/]+)\//)[0];
+          var url = window.location.toString().replace(/\/*#?.*/, apiPrefix + 'spec');
 
             window.swaggerUi = new SwaggerUi({
                 url: url,
@@ -229,4 +230,3 @@
 </section>
 </body>
 </html>
-
