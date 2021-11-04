@@ -46,7 +46,7 @@ setup(
     platforms='any',
     install_requires=[
         'Flask>=0.10',
-        'PyYAML>=3.0',
+        'PyYAML==5.4.1',
         'jsonschema>=2.5.1',
         'mistune'
     ]
