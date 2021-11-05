@@ -17,7 +17,10 @@ def read(fname):
 
 
 def desc():
-    return read('README.md')
+    readme = open('README.md', 'r')
+    long_description = readme.read()
+    readme.close()
+    return long_description
 
 
 # grep flasgger/__init__.py since python 3.x cannot
@@ -40,6 +43,7 @@ setup(
     author_email=grep('__email__'),
     description='Extract swagger specs from your flask project',
     long_description=desc(),
+    long_description_content_type='text/markdown',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
